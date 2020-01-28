@@ -1,0 +1,23 @@
+{
+  "name": "strata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel serve ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stratajs/strata.git"
+  },
+  "author": "Peter McKee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stratajs/strata/issues"
+  },
+  "homepage": "https://github.com/stratajs/strata#readme",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
