@@ -2,26 +2,17 @@ import strata from '../strata'
 
 const { el, tn, div, form, label, textbox, button } = strata
 
-// Full Name
-const lblFullName = label( 'Full Name' )
-const txtFullName = textbox()
+function textField( lbl ) {
+  const d = div()
+  d.append( label( lbl ), textbox() )
 
-const divFullName = div()
-divFullName.append( lblFullName, txtFullName )
+  return d
+}
 
-// Email
-const lblEmail = label( 'Email' )
-const txtEmail = textbox()
-
-const divEmail = div()
-divEmail.append( lblEmail, txtEmail )
-
-// Password
-const lblPassword = label( 'Password' )
-const txtPassword = textbox()
-
-const divPassword = div()
-divPassword.append( lblPassword, txtPassword )
+// Fields
+const fullNameField = textField( 'Full Name' )
+const emailField = textField( 'Email' )
+const passwordField = textField( 'Password' )
 
 // Done Button
 const btnDone = button( 'Done' )
@@ -33,7 +24,13 @@ const userForm = form()
 userForm.method = "POST"
 userForm.action = "new_user.html"
 
-userForm.append( divFullName, divEmail, divPassword, divDoneButton )
+// Add Fields to Form
+userForm.append( 
+  fullNameField, 
+  emailField, 
+  passwordField, 
+  divDoneButton 
+)
 
 const root = document.getElementById( 'root' )
 root.appendChild( userForm )
