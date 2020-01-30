@@ -1,6 +1,6 @@
 import strata from '../strata'
 
-const { el, tn, div, form, span, label, textbox, button } = strata
+const { el, tn } = strata
 
 const e = el( 'div', { className: "foo" }, [
   el( 'span', {}, [
