@@ -10,23 +10,45 @@ const strata = {
   form, 
   input,
 
+  span, 
+
   label,
   textbox, 
   button
 }
 
-function el( tag ) {
-  return document.createElement( tag )
+/////////////////////////////////////////////////////////////////////
+//
+//  Base
+//
+function el( tag, attrs, children ) {
+  attrs = attrs || {}
+
+  let e = document.createElement( tag )
+
+  for( let [key, value] of Object.entries( attrs ) ) {
+    e[key] = value
+  }
+
+  e.append( ...children )
+
+  return e
 }
 
 function tn( txt ) {
   return document.createTextNode( txt )
 }
 
+/////////////////////////////////////////////////////////////////////
+//
+//  Base Elements
+//
+function div( attrs, children ) {
+  return el( 'div', attrs, children )
+}
 
-
-function div() {
-  return el( 'div' )
+function span( attrs, children ) {
+  return el( 'span', attrs, children )
 }
 
 function form() {
@@ -39,19 +61,23 @@ function input( type ) {
   return input
 }
 
+function button( label ) {
+  const btn = el( 'button' )
+  btn.appendChild( tn( label ) )
+  return btn
+}
 
+
+/////////////////////////////////////////////////////////////////////
+//
+//  Higher Order
+//
 function label( txt ) {
   return el( 'span' ).appendChild( tn( txt ) )
 }
 
 function textbox() {
   return input( 'textbox' )
-}
-
-function button( label ) {
-  const btn = el( 'button' )
-  btn.appendChild( tn( label ) )
-  return btn
 }
 
 
