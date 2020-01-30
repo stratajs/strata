@@ -52,20 +52,18 @@ function span( attrs, children ) {
 }
 
 function form() {
-  return el( 'form' )
+  
 }
 
 function input( type ) {
-  const input = el( 'input' )
-  input.type = type
-  return input
+  
 }
 
 function button( label ) {
-  const btn = el( 'button' )
-  btn.appendChild( tn( label ) )
-  return btn
+  
 }
+
+// Refacotr these to use an array of HTML elements
 
 
 /////////////////////////////////////////////////////////////////////
@@ -79,6 +77,8 @@ function label( txt ) {
 function textbox() {
   return input( 'textbox' )
 }
+
+// Write the other imput types
 
 
 export default strata
