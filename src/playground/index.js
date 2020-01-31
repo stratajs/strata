@@ -6,8 +6,11 @@ function Div() {
   
   return (
     div( { className: "foo" }, [
-      p( {}, [
-        span({}, [ tn( 'This is our DIV' ) ]) 
+      h1( 'Title' ),
+      p([
+        tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
+        span( 'This is our DIV' ),
+        tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
       ])
     ])
   )

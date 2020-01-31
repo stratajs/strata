@@ -50,6 +50,22 @@ let tags = [
 
 tags.forEach( t => {
   strata[ t ] = function( attrs, children ) {
+    // If only a string is passed in, assume that it will be a child and be a textnode
+    // ex: h1( 'Title' ) => el( tag, null, [ tn( 'Title' ) ] )
+    
+    // If only a array is passed in, assume it's the children argument
+    // ex:
+    // p([
+    //   tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
+    //   span( 'This is our DIV' ),
+    //   tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
+    // ])
+    // =>
+    // el( 'p', null, [
+    //   tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
+    //   span( 'This is our DIV' ),
+    //   tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
+    // ])
     return el( t, attrs, children )
   }
 })
