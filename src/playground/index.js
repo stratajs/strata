@@ -1,16 +1,17 @@
 import strata from '../strata'
 
-const { el, tn, div, form, span, label, textbox, button } = strata
+const { el, tn, div, form, span, p, h1, h2, label, textbox, button } = strata
 
 function Div() {
   
   return (
     div( { className: "foo" }, [
-      span( {}, [
-        tn( 'This is our DIV' )
+      p( {}, [
+        span({}, [ tn( 'This is our DIV' ) ]) 
       ])
     ])
   )
+  
 }
 
 

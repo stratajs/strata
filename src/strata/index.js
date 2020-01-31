@@ -6,15 +6,8 @@ const strata = {
   el,
   tn,
 
-  div,
-  form, 
-  input,
-
-  span, 
-
   label,
-  textbox, 
-  button
+  textbox
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -23,6 +16,7 @@ const strata = {
 //
 function el( tag, attrs, children ) {
   attrs = attrs || {}
+  children = children || []
 
   let e = document.createElement( tag )
 
@@ -49,28 +43,36 @@ let tags = [
   'form',
   'input',
   'button',
-  'p'
+  'p',
+  'h1',
+  'h2'
 ]
 
-function div( attrs, children ) {
-  return el( 'div', attrs, children )
-}
+tags.forEach( t => {
+  strata[ t ] = function( attrs, children ) {
+    return el( t, attrs, children )
+  }
+})
 
-function span( attrs, children ) {
-  return el( 'span', attrs, children )
-}
+// function div( attrs, children ) {
+//   return el( 'div', attrs, children )
+// }
 
-function form() {
-  return el( 'form', attrs, children )
-}
+// function span( attrs, children ) {
+//   return el( 'span', attrs, children )
+// }
 
-function input( type ) {
-  return el( 'input', attrs, children )
-}
+// function form() {
+//   return el( 'form', attrs, children )
+// }
 
-function button( label ) {
-  return el( 'button', attrs, children )
-}
+// function input( type ) {
+//   return el( 'input', attrs, children )
+// }
+
+// function button( label ) {
+//   return el( 'button', attrs, children )
+// }
 
 // Refacotr these to use an array of HTML elements
 
