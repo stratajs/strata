@@ -1,28 +1,14 @@
-import logger from './logger'
 
 const strata = {
-  logger,
-
   el,
   tn
 }
 
-/////////////////////////////////////////////////////////////////////
-//
-//  Base
-//
+// Write func that takes a tag name, set of attributes and list of children.
+// Create an html element form the tag, assign the attributes and append the children.
+// Then return the element
 function el( tag, attrs, children ) {
-  attrs = attrs || {}
-
-  let e = document.createElement( tag )
-
-  for( let [key, value] of Object.entries( attrs ) ) {
-    e[key] = value
-  }
-
-  e.append( ...children )
-
-  return e
+  
 }
 
 function tn( txt ) {
