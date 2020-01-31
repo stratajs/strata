@@ -43,6 +43,15 @@ function tn( txt ) {
 //
 //  Base Elements
 //
+let tags = [
+  'div',
+  'span',
+  'form',
+  'input',
+  'button',
+  'p'
+]
+
 function div( attrs, children ) {
   return el( 'div', attrs, children )
 }
@@ -52,15 +61,15 @@ function span( attrs, children ) {
 }
 
 function form() {
-  
+  return el( 'form', attrs, children )
 }
 
 function input( type ) {
-  
+  return el( 'input', attrs, children )
 }
 
 function button( label ) {
-  
+  return el( 'button', attrs, children )
 }
 
 // Refacotr these to use an array of HTML elements
@@ -71,7 +80,7 @@ function button( label ) {
 //  Higher Order
 //
 function label( txt ) {
-  return el( 'span' ).appendChild( tn( txt ) )
+  return el( 'span', [ tn( txt ) ] )
 }
 
 function textbox() {
