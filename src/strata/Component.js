@@ -18,6 +18,10 @@ export default class Component {
     this.fireSetState()
   }
 
+  didMount() {
+    
+  }
+
   render() {
     strata.div( 'PLEASE ADD COMPONENTS' )
   }

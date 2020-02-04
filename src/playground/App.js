@@ -5,7 +5,7 @@ import Loading from './components/Loading'
 import UserSearchForm from './components/UserSearchForm'
 import UserWidget from './components/UserWidget'
 
-const { div, h2 } = strata
+const { div, h2, span } = strata
 
 class App extends strata.Component {
 
@@ -19,28 +19,6 @@ class App extends strata.Component {
       initLoad: true
     }
     this.handleSearch = this.handleSearch.bind(this)
-  }
-
-  async didMount() {
-    this.setState({
-      user: null,
-      isLoading: true,
-      error: null,
-      initLoad: false
-    })
-
-    services
-      .getUserInfo( "222" )
-      .then( user => {
-        console.log( user )
-        this.setState({
-          user: user,
-          isLoading: false,
-          error: null,
-          initLoad: false
-        })
-      })
-    ;
   }
 
   handleSearch( userId ) {
@@ -77,8 +55,6 @@ class App extends strata.Component {
               ? span(' Not Found' )
               : '')
       ])
-      
-      
     )
   }
 
