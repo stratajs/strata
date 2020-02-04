@@ -10,10 +10,10 @@ function UserSearchForm( props ) {
   }
 
   return (
-    div({style: "margin: 50px 0px;"}, [
+    div({className: "page-wrapper"}, [
       span( 'Enter User ID: ' ),
       input({ id: "userId", type: "textbox" }),
-      input({ type: "button", onclick: handleClick, value: "Find" })
+      input({ type: "button", onclick: handleClick, className: "btn btn-sm btn-primary", value: "Find" })
     ])
   )
 }

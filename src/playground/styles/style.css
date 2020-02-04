@@ -1,3 +1,11 @@
+.page-wrapper {
+  margin: 50px 0px;
+}
+
+.page-wrapper input {
+  margin-right: 15px;
+}
+
 .footer {
   margin: 50px 0px;
   padding: 25px 10px;
