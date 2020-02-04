@@ -1,0 +1,37 @@
+[
+  {
+    "id": "111",
+    "firstName": "Peter",
+    "lastName": "McKee",
+    "twitter": "@pmckeetx",
+    "instagram": "@seaccelerator"
+  },
+  {
+    "id": "222",
+    "firstName": "Sommer",
+    "lastName": "McKee",
+    "twitter": "@findsommer",
+    "instagram": "@findsommer"
+  },
+  {
+    "id": "333",
+    "firstName": "Brooke",
+    "lastName": "Crisp",
+    "twitter": "@pbrooke",
+    "instagram": "@pbrooke"
+  },
+  {
+    "id": "444",
+    "firstName": "Micah",
+    "lastName": "McKee",
+    "twitter": "@mandm",
+    "instagram": "@smandm"
+  },
+  {
+    "id": "555",
+    "firstName": "Kenna",
+    "lastName": "McKee",
+    "twitter": "@kdog",
+    "instagram": "@kdog"
+  }
+]
