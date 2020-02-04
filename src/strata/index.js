@@ -66,7 +66,14 @@ tags.forEach( t => {
     //   span( 'This is our DIV' ),
     //   tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
     // ])
-    return el( t, attrs, children )
+    if( Array.isArray( arguments[0] ) ) {
+      return el( t, null, arguments[0] )
+    } else if( typeof arguments[0] === 'string' ) {
+      return el( t, null, [ tn( arguments[0] ) ] )
+    } else {
+      return el( t, attrs, children )
+    }
+    
   }
 })
 

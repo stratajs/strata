@@ -9,7 +9,7 @@ function Div() {
       h1( 'Title' ),
       p([
         tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
-        span( 'This is our DIV' ),
+        span( ' This is our DIV ' ),
         tn( 'This is my lorem ipsum is my lorem ipsum is my lorem ipsum' ),
       ])
     ])
