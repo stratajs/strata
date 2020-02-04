@@ -1,8 +1,11 @@
 import logger from './logger'
+import renderer from './renderer'
+import Component from './Component'
 
 const strata = {
   logger,
-
+  render: renderer.render,
+  Component,
   el,
   tn,
 
@@ -57,7 +60,12 @@ tags.forEach( t => {
     if( Array.isArray( arguments[0] ) ) {
       return el( t, null, arguments[0] )
     } else if( typeof arguments[0] === 'string' ) {
-      return el( t, null, [ tn( arguments[0] ) ] )
+      if( arguments[1] ) {
+        return el( t, arguments[1], [ tn( arguments[0] ) ] )
+      } else {
+        return el( t, null, [ tn( arguments[0] ) ] )
+      }
+      
     } else {
       return el( t, attrs, children )
     }

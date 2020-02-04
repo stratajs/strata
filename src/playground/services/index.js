@@ -1,28 +1,27 @@
-export function getUserInfo( cb ) {
+import users from './users.json'
+
+function getUserById( id ) {
+  return users.find( u => u.id == id )
+}
+
+export function getUserInfoCallback( cb ) {
   setTimeout( () => {
-    cb({
-      firstName: "Peter",
-      lastName: "McKee",
-      twitter: "@pmckeetx",
-      instagram: "@seaccelerator"
-    })
+    const user = getUserById( id )
+    cb( user )
   }, 2000)
 }
 
-export function getUserInfoPromise() {
+export function getUserInfo( id ) {
   return new Promise( ( resolve, reject ) => {
     setTimeout( () => {
-      resolve({
-        firstName: "Peter",
-        lastName: "McKee",
-        twitter: "@pmckeetx",
-        instagram: "@seaccelerator"
-      })
+      const user = getUserById( id )
+
+      resolve( user )
     }, 2000)
   })
 }
 
 export default {
   getUserInfo,
-  getUserInfoPromise
+  getUserInfoCallback
 }
